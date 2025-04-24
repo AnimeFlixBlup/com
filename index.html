@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameStore - Tu tienda de videojuegos</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="image/dxd.jpg" type="image/x-jpg">
+</head>
+<body>
+    <!-- Header con navegación -->
+    <header>
+        <div class="logo">
+            <h1>GameStore</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#nosotros">Sobre Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <button id="login-btn" class="btn">Iniciar Sesión</button>
+            <button id="logout-btn" class="btn hidden">Cerrar Sesión</button>
+        </div>
+    </header>
+
+    <!-- Section: Hero/Inicio -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h2>Descubre los mejores juegos</h2>
+            <p>Tu aventura comienza aquí. Miles de títulos al mejor precio.</p>
+            <button class="btn btn-primary">Explorar ahora</button>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Section: Juegos Destacados -->
+    <section class="featured-games">
+        <h2>Juegos Destacados</h2>
+        <div class="games-slider">
+            <div class="game-card">
+                <img src="image/fifa.png" alt="Juego 1">
+                <div class="game-info">
+                    <h3>FIFA 2025</h3>
+                    <p class="price">$59.99</p>
+                    <button class="btn btn-secondary">Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="image/god" alt="Juego 2">
+                <div class="game-info">
+                    <h3>GOD OF WAR</h3>
+                    <p class="price">$49.99</p>
+                    <button class="btn btn-secondary">Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="image/black" alt="Juego 3">
+                <div class="game-info">
+                    <h3>COD BLACK OPS</h3>
+                    <p class="price">$39.99</p>
+                    <button class="btn btn-secondary">Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="image/mine" alt="Juego 4">
+                <div class="game-info">
+                    <h3>Minecraft</h3>
+                    <p class="price">$12.99</p>
+                    <button class="btn btn-secondary">Añadir al carrito</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Catálogo -->
+    <section id="catalogo" class="catalog">
+        <h2>Catálogo Completo</h2>
+        <div class="filter-options">
+            <select id="genre-filter">
+                <option value="">Todos los géneros</option>
+                <option value="accion">Acción</option>
+                <option value="aventura">Aventura</option>
+                <option value="rol">Rol</option>
+                <option value="estrategia">Estrategia</option>
+                <option value="deportes">Deportes</option>
+            </select>
+            <select id="platform-filter">
+                <option value="">Todas las plataformas</option>
+                <option value="pc">PC</option>
+                <option value="playstation">PlayStation</option>
+                <option value="xbox">Xbox</option>
+                <option value="nintendo">Nintendo</option>
+            </select>
+            <input type="text" id="search-bar" placeholder="Buscar juegos...">
+        </div>
+        <div class="games-grid">
+            <!-- Juegos dinámicos se cargarán aquí con JavaScript -->
+        </div>
+        <div class="pagination">
+            <button class="btn-page" id="prev-page">Anterior</button>
+            <span id="page-indicator">Página 1 de 5</span>
+            <button class="btn-page" id="next-page">Siguiente</button>
+        </div>
+    </section>
+
+    <!-- Section: Sobre Nosotros -->
+    <section id="nosotros" class="about-us">
+        <h2>Sobre Nosotros</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="image/dxd.jpg" alt="Nuestro equipo">
+            </div>
+            <div class="about-text">
+                <h3>Quiénes Somos</h3>
+                <p>GameStore nació en 2025 con la misión de ofrecer los mejores videojuegos al mejor precio. Somos un equipo de apasionados gamers que entienden lo que los jugadores buscan.</p>
+                <h3>Nuestra Misión</h3>
+                <p>Conectar a los jugadores con experiencias increíbles a través de una plataforma fácil de usar y precios competitivos.</p>
+                <h3>Por qué elegirnos</h3>
+                <ul>
+                    <li>Catálogo con unos cuantos títulos</li>
+                    <li>Precios competitivos garantizados</li>
+                    <li>Atención al cliente 24/7</li>
+                    <li>Entrega inmediata de códigos digitales</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Contacto -->
+    <section id="contacto" class="contact">
+        <h2>Contacto</h2>
+        <div class="contact-container">
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Asunto:</label>
+                    <input type="text" id="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+            </form>
+            <div class="contact-info">
+                <h3>Información de Contacto</h3>
+                <p><i class="fas fa-envelope"></i> info@gamestore.com</p>
+                <p><i class="fas fa-phone"></i> +57 --- --- ----</p>
+                <p><i class="fas fa-map-marker-alt"></i> calle -- # -- - -- </p>
+                <div class="social-media">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>GameStore</h3>
+                <p>Tu tienda de juegos de confianza</p>
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#catalogo">Catálogo</a></li>
+                    <li><a href="#nosotros">Sobre Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-category">
+                <h4>Categorías</h4>
+                <ul>
+                    <li><a href="#">Acción</a></li>
+                    <li><a href="#">Aventura</a></li>
+                    <li><a href="#">Estrategia</a></li>
+                    <li><a href="#">Deportes</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Suscríbete</h4>
+                <p>Recibe nuestras ofertas y novedades</p>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Tu email" required>
+                    <button type="submit" class="btn">Suscribir</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 GameStore. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Iniciar Sesión</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Usuario:</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+            </form>
+            <p>¿No tienes cuenta? <a href="#" id="register-link">Regístrate aquí</a></p>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="register-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Crear Cuenta</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="new-username">Usuario:</label>
+                    <input type="text" id="new-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="new-email">Email:</label>
+                    <input type="email" id="new-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="new-password">Contraseña:</label>
+                    <input type="password" id="new-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirmar Contraseña:</label>
+                    <input type="password" id="confirm-password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Registrarse</button>
+            </form>
+        </div>
+    </div>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
